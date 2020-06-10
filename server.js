@@ -9,7 +9,7 @@ const server = express();
 // const soupsRouter = require("./soupsRouter/soupsRouter");
 // const childsPlatesRouter = require("./childsPlatesRouter/childsPlatesRouter");
 
-const allRouter = require("./");
+const allRouter = require("./menuItems");
 server.use(morgan("combined"));
 server.use(express.json());
 server.get("/", (req, res) => {
@@ -21,6 +21,7 @@ server.get("/", (req, res) => {
 
 var menuItems = require("./menuItems/menuItems");
 
+server.use("/menu", allRouter);
 // server.use("/api/seafood", seafoodRouter);
 // server.use("/api/steaks", steaksRouter);
 // server.use("/api/chicken", chickenRouter);
