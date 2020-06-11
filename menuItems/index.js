@@ -12,6 +12,7 @@ router.get("/", (req, res) => {
         })
         .catch((err) => {
             console.log(err);
+            res.status(400).json({ error: "error getting information" });
         });
 });
 module.exports = router;
