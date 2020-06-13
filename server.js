@@ -19,7 +19,7 @@ server.get("/", (req, res) => {
     });
 });
 
-var menuItems = require("./menuItems/menuItems");
+let menuItems = require("./menuItems/menuItems");
 
 server.use("/menu", allRouter);
 // server.use("/api/seafood", seafoodRouter);
