@@ -19,8 +19,6 @@ server.get("/", (req, res) => {
     });
 });
 
-let menuItems = require("./menuItems/menuItems");
-
 server.use("/menu", allRouter);
 // server.use("/api/seafood", seafoodRouter);
 // server.use("/api/steaks", steaksRouter);

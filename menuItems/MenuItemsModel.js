@@ -1,12 +1,27 @@
 const db = require("../data/connection");
 module.exports = {
     find,
-    // findById,
+    findByCategories,
+    findById,
     // add,
     // update,
     // remove,
 };
 
 function find() {
-    return db("Menu");
+    return db("Menu").join(
+        "Categories",
+        "Menu.CategoryID",
+        "Categories.CategoryID"
+    );
+}
+
+function findByCategories() {
+    return db("Categories").orderBy("category");
+}
+
+function findById(id) {
+    return db("Menu")
+        .where("MenuItemID", id)
+        .join("Categories", "Menu.CategoryID", "Categories.CategoryID");
 }
