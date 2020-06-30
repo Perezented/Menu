@@ -6,6 +6,8 @@ const server = express();
 
 const menuItems = require("./menuItems");
 
+server.use(cors());
+server.use(helmet());
 server.use(morgan("combined"));
 server.use(express.json());
 server.use("/menu", menuItems);
