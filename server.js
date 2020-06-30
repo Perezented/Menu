@@ -1,12 +1,13 @@
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
-var morgan = require("morgan");
+const morgan = require("morgan");
 const server = express();
 
 const menuItems = require("./menuItems");
 
 server.use(cors());
+
 server.use(helmet());
 server.use(morgan("combined"));
 server.use(express.json());
