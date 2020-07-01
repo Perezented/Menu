@@ -1,5 +1,5 @@
 require("dotenv").config();
-//postgres://pepijvuitjtsey:e61725feb066550881b31730d26d6fc82cdfc035bee9ce1fb58a715c66ff4511@ec2-34-233-226-84.compute-1.amazonaws.com:5432/d3h24ilhojc555
+
 const pgConnection = process.env.DATABASE_URL;
 module.exports = {
     development: {

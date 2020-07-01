@@ -16,21 +16,6 @@ router.get("/", (req, res) => {
         });
 });
 
-router.get("/categories", (req, res) => {
-    menuItems
-        .findByCategories()
-        .then((categories) => {
-            console.log(categories);
-            res.status(200).json(categories);
-        })
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json({
-                Error: "Could not retrieve the categories.",
-                err,
-            });
-        });
-});
 router.get("/:id", (req, res) => {
     menuItems
         .findById(req.params.id)
