@@ -1,54 +1,57 @@
-require("dotenv").config();
-
+// Update with your config settings.
 const pgConnection = process.env.DATABASE_URL;
+
 module.exports = {
     development: {
         client: "pg",
-        useNullAsDefault: true, // needed for sqlite
         connection: {
-            filename: {
-                connectionString: `postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
-                ssl: { rejectUnauthorized: false },
-            },
+            host: "localhost",
+            database: "menu",
+            user: "postgres",
+            password: process.env.PASSWORD,
         },
-        searchPath: ["foodMenu", "public"],
-        options: { schema: "foodMenu" },
-        pool: { min: 0, max: 7 },
         migrations: {
             directory: "./data/migrations",
         },
         seeds: {
             directory: "./data/seeds",
         },
-        pool: {
-            afterCreate: (conn, done) => {
-                // runs after a connection is made to the sqlite engine
-                conn.run("PRAGMA foreign_keys = ON", done); // turn on FK enforcement
-            },
+    },
+    testing: {
+        client: "pg",
+        connection: {
+            host: "localhost",
+            database: "menu",
+            user: "postgres",
+            password: process.env.PASSWORD,
+        },
+        migrations: {
+            directory: "./data/migrations",
+        },
+        seeds: {
+            directory: "./data/testSeeds",
         },
     },
 
-    testing: {
-        client: "sqlite3",
+    staging: {
+        client: "postgresql",
         connection: {
-            filename: "./data/foodMenuTest.db3",
+            database: "my_db",
+            user: "username",
+            password: "password",
         },
-        useNullAsDefault: true,
+        pool: {
+            min: 2,
+            max: 10,
+        },
         migrations: {
-            directory: "./data/migrations",
-        },
-        seeds: {
-            directory: "./data/seeds",
+            tableName: "knex_migrations",
         },
     },
 
     production: {
         client: "pg",
         connection: pgConnection,
-        pool: {
-            min: 2,
-            max: 10,
-        },
         migrations: {
             directory: "./data/migrations",
         },
