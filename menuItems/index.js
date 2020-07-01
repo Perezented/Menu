@@ -18,9 +18,9 @@ router.get("/", (req, res) => {
 router.get("/categories", (req, res) => {
     menuItems
         .findByCategories()
-        .then((items) => {
-            console.log(items);
-            res.status(200).json({ items });
+        .then((categories) => {
+            console.log(categories);
+            res.status(200).json({ categories });
         })
         .catch((err) => {
             console.log(err);
