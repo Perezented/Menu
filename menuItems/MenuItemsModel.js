@@ -11,8 +11,8 @@ module.exports = {
 function find() {
     return db("Menu").join(
         "Categories",
-        "Menu.CategoryID",
-        "Categories.CategoryID"
+        "Menu.categoryID",
+        "Categories.categoryID"
     );
 }
 

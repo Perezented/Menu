@@ -9,7 +9,7 @@ exports.up = function (knex) {
             tbl.string("menuItem").notNullable();
             tbl.string("description");
             tbl.float("price").notNullable();
-            tbl.float("additionalPrice").notNullable();
+            tbl.float("additionalPrice");
             tbl.integer("categoryID")
                 .unsigned()
                 .references("Categories.categoryID")

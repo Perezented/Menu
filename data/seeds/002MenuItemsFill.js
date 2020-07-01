@@ -6,65 +6,65 @@ exports.seed = function (knex) {
             // Inserts seed entries
             return knex("Menu").insert([
                 {
-                    MenuItem: "Beef Steak Tampiquena",
-                    Description:
+                    menuItem: "Beef Steak Tampiquena",
+                    description:
                         "Ribeye steak, served with fresh onions, tomatoes, bell peppers, lettuce, rice, and beans.",
-                    Price: 11.99,
-                    CategoryID: 1,
+                    price: 11.99,
+                    categoryID: 1,
                 },
                 {
-                    MenuItem: "Beef Steak Ranchero",
-                    Description:
+                    menuItem: "Beef Steak Ranchero",
+                    description:
                         "Beef steak served with beans, rice, and flour tortillas. Covered with Ranchero Sauce",
-                    Price: 11.99,
-                    CategoryID: 1,
+                    price: 11.99,
+                    categoryID: 1,
                 },
                 {
-                    MenuItem: "Steven Special",
-                    Description:
+                    menuItem: "Steven Special",
+                    description:
                         "Grilled chicken breast with rice all topped with cheese sauce.",
-                    Price: 7.99,
-                    CategoryID: 2,
+                    price: 7.99,
+                    categoryID: 2,
                 },
                 {
-                    MenuItem: "Jennifer Special",
-                    Description:
+                    menuItem: "Jennifer Special",
+                    description:
                         "Grilled chicken topped with cheese sauce, onion, bell peppers, tomatoes, and mushrooms. Served with flour tortillas and rice.",
-                    Price: 7.99,
-                    CategoryID: 2,
+                    price: 7.99,
+                    categoryID: 2,
                 },
                 {
-                    MenuItem: "Tilapia Mexicana",
-                    Description:
+                    menuItem: "Tilapia Mexicana",
+                    description:
                         "Grilled tilapia topped with cooked peppers, tomatoes and onions. Served with rice and beans.",
-                    Price: 8.99,
-                    CategoryID: 3,
+                    price: 8.99,
+                    categoryID: 3,
                 },
                 {
-                    MenuItem: "Tilapia El Tapatio",
-                    Description:
+                    menuItem: "Tilapia El Tapatio",
+                    description:
                         "Grilled tilapia served with steamed carrots, broccoli, cauliflower, zucchini, squash and rice.",
-                    Price: 8.99,
-                    CategoryID: 3,
+                    price: 8.99,
+                    categoryID: 3,
                 },
                 {
-                    MenuItem: "Tilapia",
-                    Description: "Grilled tilapia served with rice and salad.",
-                    Price: 8.99,
-                    CategoryID: 3,
+                    menuItem: "Tilapia",
+                    description: "Grilled tilapia served with rice and salad.",
+                    price: 8.99,
+                    categoryID: 3,
                 },
                 {
-                    MenuItem: "Seafood Soup",
-                    Description: "Tilapia, crab meat, shrimp and vegetables.",
-                    Price: 12.99,
-                    CategoryID: 4,
+                    menuItem: "Seafood Soup",
+                    description: "Tilapia, crab meat, shrimp and vegetables.",
+                    price: 12.99,
+                    categoryID: 4,
                 },
                 {
-                    MenuItem: "Chicken Soup",
-                    Description:
+                    menuItem: "Chicken Soup",
+                    description:
                         "Chicken and vegetables. Served with rice on the side.",
-                    CategoryID: 4,
-                    Price: 7.99,
+                    price: 7.99,
+                    categoryID: 4,
                 },
             ]);
         });

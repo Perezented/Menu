@@ -15,6 +15,18 @@ router.get("/", (req, res) => {
             res.status(400).json({ error: "error getting information" });
         });
 });
+router.get("/categories", (req, res) => {
+    menuItems
+        .findByCategories()
+        .then((items) => {
+            console.log(items);
+            res.status(200).json({ items });
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(400).json({ error: "error getting information" });
+        });
+});
 
 router.get("/:id", (req, res) => {
     menuItems
