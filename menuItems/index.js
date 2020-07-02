@@ -16,8 +16,9 @@ router.get("/", (req, res) => {
         });
 });
 router.get("/categories", (req, res) => {
+    req.params.filter;
     menuItems
-        .findByCategories()
+        .findCategories()
         .then((categories) => {
             console.log(categories);
             res.status(200).json({ categories });

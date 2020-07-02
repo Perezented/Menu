@@ -1,7 +1,7 @@
 const db = require("../data/connection");
 module.exports = {
     find,
-    findByCategories,
+    findCategories,
     findById,
     // add,
     // update,
@@ -16,8 +16,15 @@ function find() {
     );
 }
 
-function findByCategories() {
+function findCategories() {
     return db("Categories").orderBy("category");
+}
+
+function findItemsByCategories(filter) {
+    return db("Categories")
+        .orderBy("category")
+        .where("Categories.category", filter)
+        .join("Menu", "Categories.category.ID", "Menu.categoryID");
 }
 
 function findById(id) {

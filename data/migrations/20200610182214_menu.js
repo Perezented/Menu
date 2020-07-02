@@ -3,6 +3,7 @@ exports.up = function (knex) {
         .createTable("Categories", (tbl) => {
             tbl.increments("categoryID");
             tbl.string("category").notNullable();
+            tbl.string("categoryDescription");
         })
         .createTable("Menu", (tbl) => {
             tbl.increments("menuItemID");
