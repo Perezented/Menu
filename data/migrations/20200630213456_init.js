@@ -1,13 +1,11 @@
 exports.up = function (knex) {
-    return knex.schema.createTable("specialOfTheDay", (tbl) => {
+    return knex.schema.createTable("accounts", (tbl) => {
         tbl.increments();
-        tbl.string("sotdName").notNullable();
-        tbl.string("sotdDescription").notNullable();
-        tbl.float("sotdPrice").notNullable();
-        tbl.float("sotdAddtPrice");
+        tbl.string("username").notNullable();
+        tbl.string("password").notNullable();
     });
 };
 
 exports.down = function (knex) {
-    return knex.schema.dropTableIfExists("specialOfTheDay");
+    return knex.schema.dropTableIfExists("accounts");
 };

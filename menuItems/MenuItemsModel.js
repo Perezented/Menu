@@ -3,6 +3,7 @@ module.exports = {
     find,
     findCategories,
     findById,
+    findItemsByCategories,
     // add,
     // update,
     // remove,
