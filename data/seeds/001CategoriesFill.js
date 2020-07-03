@@ -18,7 +18,7 @@ exports.seed = function (knex) {
                     categoryDescription: "Lunch Specials",
                     category: "LunchSpecials",
                 },
-                { categoryDescription: "Burritios", category: "Burritos" },
+                { categoryDescription: "Burritos", category: "Burritos" },
                 { categoryDescription: "Fajitas", category: "Fajitas" },
                 {
                     categoryDescription: "Enchiladas And Hamburgers",

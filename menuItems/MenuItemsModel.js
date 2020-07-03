@@ -24,8 +24,8 @@ function findCategories() {
 function findItemsByCategories(filter) {
     return db("Categories")
         .orderBy("category")
-        .where("Categories.category", filter)
-        .join("Menu", "Categories.category.ID", "Menu.categoryID");
+        .join("Menu", "Categories.categoryID", "Menu.categoryID")
+        .where({ "Categories.category": filter });
 }
 
 function findById(id) {
