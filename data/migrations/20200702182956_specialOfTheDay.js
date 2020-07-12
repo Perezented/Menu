@@ -4,7 +4,7 @@ exports.up = function (knex) {
         tbl.string("sotdName").notNullable();
         tbl.string("sotdDescription").notNullable();
         tbl.float("sotdPrice").notNullable();
-        tbl.string("sotdAddtDescription").notNullable();
+        tbl.string("sotdAddtDescription");
         tbl.float("sotdAddtPrice");
     });
 };
