@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express();
-
+//  Using a menuItemModel for functions and the connection to the DB
 const menuItems = require("./MenuItemsModel");
-
+//  Gets all the food items
 router.get("/", (req, res) => {
     menuItems
         .find()
@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
             res.status(400).json({ error: "error getting information" });
         });
 });
-
+//  Gets the food items by category
 router.get("/categories", (req, res) => {
     let filter = req.query.filter;
     console.log(filter);
@@ -45,7 +45,7 @@ router.get("/categories", (req, res) => {
             });
     }
 });
-
+//  Gets a food item by id
 router.get("/:id", (req, res) => {
     menuItems
         .findById(req.params.id)

@@ -1,14 +1,16 @@
+//  Main imports
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 const morgan = require("morgan");
 const server = express();
-
-const menuItems = require("./menuItems");
 const session = require("express-session");
-const dbConnection = require("./data/connection");
 const KnexSessionsStore = require("connect-session-knex")(session);
-
+//  Setting up the data base connection
+const dbConnection = require("./data/connection");
+//  Custom routes
+const menuItems = require("./menuItems");
+//  Session configuration for knex
 const sessionConfig = {
     name: "monster",
     secret: process.env.SESSION_SECRET || "keep it secret, keep it safe!",
@@ -26,21 +28,21 @@ const sessionConfig = {
         clearInterval: 30000, //  delete expired sessions - in milliseconds
     }),
 };
-
+//  make sure to use the sessionConfig
 server.use(session(sessionConfig));
-
 server.use(cors());
-
 server.use(helmet());
 server.use(morgan("combined"));
 server.use(express.json());
-server.use("/menu", menuItems);
 
+//  Actual endpoints for the server
 server.get("/", (req, res) => {
     res.status(200).json({
         Message: "Welcome to the home slash of the menu server.",
         menuItems,
     });
 });
+//  custom route
+server.use("/menu", menuItems);
 
 module.exports = server;
