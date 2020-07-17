@@ -11,6 +11,7 @@ const dbConnection = require("./data/connection");
 //  Custom routes
 const menuItems = require("./menuItems");
 const specialOfTheDay = require("./specialOfTheDay/specialOfTheDay");
+const orderDetails = require("./orderDetalis/orderDetalis");
 //  Session configuration for knex
 const sessionConfig = {
     name: "monster",
@@ -46,5 +47,6 @@ server.get("/", (req, res) => {
 //  custom routes
 server.use("/menu", menuItems);
 server.use("/sotd", specialOfTheDay);
+server.use("/orderDetails", orderDetails);
 
 module.exports = server;
