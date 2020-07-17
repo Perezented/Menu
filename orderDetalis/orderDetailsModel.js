@@ -1,6 +1,7 @@
 const db = require("../data/connection");
 module.exports = {
     find,
+    add,
 };
 
 function find() {
