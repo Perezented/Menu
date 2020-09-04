@@ -2,61 +2,61 @@
 const pgConnection = process.env.DATABASE_URL;
 
 module.exports = {
-    development: {
-        client: "pg",
-        connection: {
-            host: "localhost",
-            database: "menu",
-            user: "postgres",
-            password: process.env.PASSWORD || "tH3w3Bc0D!ngP@s5c0D3",
-        },
-        migrations: {
-            directory: "./data/migrations",
-        },
-        seeds: {
-            directory: "./data/seeds",
-        },
+  development: {
+    client: "pg",
+    connection: {
+      host: "localhost",
+      database: "menu",
+      user: "postgres",
+      password: process.env.PASSWORD,
     },
-    testing: {
-        client: "pg",
-        connection: {
-            host: "localhost",
-            database: "menu",
-            user: "postgres",
-            password: process.env.PASSWORD || "tH3w3Bc0D!ngP@s5c0D3",
-        },
-        migrations: {
-            directory: "./data/migrations",
-        },
-        seeds: {
-            directory: "./data/testSeeds",
-        },
+    migrations: {
+      directory: "./data/migrations",
     },
+    seeds: {
+      directory: "./data/seeds",
+    },
+  },
+  testing: {
+    client: "pg",
+    connection: {
+      host: "localhost",
+      database: "menu",
+      user: "postgres",
+      password: process.env.PASSWORD,
+    },
+    migrations: {
+      directory: "./data/migrations",
+    },
+    seeds: {
+      directory: "./data/testSeeds",
+    },
+  },
 
-    staging: {
-        client: "postgresql",
-        connection: {
-            database: "my_db",
-            user: "username",
-            password: "password",
-        },
-        pool: {
-            min: 2,
-            max: 10,
-        },
-        migrations: {
-            tableName: "knex_migrations",
-        },
+  staging: {
+    client: "postgresql",
+    connection: {
+      database: "my_db",
+      user: "username",
+      password: "password",
     },
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      tableName: "knex_migrations",
+    },
+  },
 
-    production: {
-        client: "pg",
-        connection: pgConnection,
-        migrations: {
-            directory: "./data/migrations",
-        },
-        seeds: {
-            directory: "./data/seeds",
-        },
+  production: {
+    client: "pg",
+    connection: pgConnection,
+    migrations: {
+      directory: "./data/migrations",
     },
+    seeds: {
+      directory: "./data/seeds",
+    },
+  },
 };
