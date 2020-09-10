@@ -1,6 +1,6 @@
 // Update with your config settings.
 const pgConnection = process.env.DATABASE_URL;
-console.log(process.env.PASSWORD);
+
 module.exports = {
   development: {
     client: "pg",
