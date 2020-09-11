@@ -1,6 +1,6 @@
+require("dotenv").config({ path: "./.env" });
 // Update with your config settings.
 const pgConnection = process.env.DATABASE_URL;
-
 module.exports = {
   development: {
     client: "pg",
