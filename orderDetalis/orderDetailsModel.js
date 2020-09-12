@@ -19,6 +19,7 @@ function add(data) {
 function update(id, changes) {
   return db("orderDetails").where({ id }).update(changes);
 }
-function remove(id) {
+function remove(id, data) {
+  db("orderArchive").insert(data, "*");
   return db("orderDetails").where({ id }).del();
 }
