@@ -4,10 +4,15 @@ module.exports = {
   findCategories,
   findById,
   findItemsByCategories,
-  // add,
+  add,
   // update,
   // remove,
 };
+
+//  Adds menu item
+function add(data) {
+  return db("Menu").insert(data, "*");
+}
 
 //  Gets menu items
 function find() {
