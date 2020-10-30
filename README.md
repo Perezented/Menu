@@ -4,6 +4,8 @@ An online menu to place food orders.
 This is the back end server for a mock restaurant menu react site. It contains all the menu items and a little more.
 This API is also able to receive orders from the front end site.
 
+---
+
 ### For Developers
 
 ![license](https://img.shields.io/badge/license-MIT-limegreen)
