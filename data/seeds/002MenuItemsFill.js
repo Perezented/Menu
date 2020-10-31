@@ -207,28 +207,28 @@ exports.seed = function (knex) {
           description:
             "3 enchiladas with shrimp and crab meat, cheese with lettuce, guacamole, tomatoes and cheese sauce.",
           price: 8.99,
-          categoryID: categoriesWithIDs["Enchiladas and Hamburgers"]
+          categoryID: categoriesWithIDs["Enchiladas And Hamburgers"]
         },
         {
           menuItem: "Enchilada Verdes",
           description:
             "3 chicken enchiladas covered with green sauce. Served with rice and beans.",
           price: 8.99,
-          categoryID: categoriesWithIDs["Enchiladas and Hamburgers"]
+          categoryID: categoriesWithIDs["Enchiladas And Hamburgers"]
         },
         {
           menuItem: "Enchilada Mexicanas",
           description:
             "One chicken, one beef, and one cheese enchilada topped with cheese sauce, red sauce and green sauce. Served with rice and beans.",
           price: 8.99,
-          categoryID: categoriesWithIDs["Enchiladas and Hamburgers"]
+          categoryID: categoriesWithIDs["Enchiladas And Hamburgers"]
         },
         {
           menuItem: "Enchilada Rancheras",
           description:
             "3 cheese enchiladas topped with pork and cooked with tomatoes, onions, bell peppers and enchilada sauce. Served with lettuce, tomato and sour cream.",
           price: 8.99,
-          categoryID: categoriesWithIDs["Enchiladas and Hamburgers"]
+          categoryID: categoriesWithIDs["Enchiladas And Hamburgers"]
         },
         {
           menuItem: "Quesadilla Fajita",
