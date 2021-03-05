@@ -33,4 +33,18 @@ router.post("/", (req, res) => {
       res.status(500).json({ message: "Failed to create new scheme" });
     });
 });
+
+//  Gets a food item by id
+router.put("/", (req, res) => {
+  req.params.id = 1;
+  req.body.id = req.params.id;
+
+  sotd
+    .updateSOTD(req.params.id, req.body)
+    .then(res.status(203).json(req.body))
+    .catch((err) => {
+      console.log(err);
+      res.status(404).json({ Error: "Item not found.", err });
+    });
+});
 module.exports = router;

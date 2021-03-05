@@ -14,9 +14,9 @@ function addSOTD(data) {
 }
 
 function updateSOTD(id, changes) {
-  return db("orderDetails").where({ id }).update(changes);
+  return db("specialOfTheDay").where({ id }).update(changes);
 }
 function removeSOTD(id, data) {
   db("orderArchive").insert(data, "*");
-  return db("orderDetails").where({ id }).del();
+  return db("specialOfTheDay").where({ id }).del();
 }
