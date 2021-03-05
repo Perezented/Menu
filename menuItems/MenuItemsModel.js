@@ -4,7 +4,7 @@ module.exports = {
   findCategories,
   findById,
   findItemsByCategories,
-  add,
+  add
   // update,
   // remove,
 };
@@ -41,8 +41,8 @@ function findItemsByCategories(filter) {
 function findById(id) {
   return (
     db("Menu")
-      .where("MenuItemID", id)
+      .where("menuItemID", id)
       //  Joins with the category table
-      .join("Categories", "Menu.CategoryID", "Categories.CategoryID")
+      .join("Categories", "Menu.categoryID", "Categories.categoryID")
   );
 }

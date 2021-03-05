@@ -3,7 +3,7 @@ module.exports = {
   find,
   add,
   remove,
-  update,
+  update
 };
 
 function find() {

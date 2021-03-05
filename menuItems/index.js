@@ -18,12 +18,10 @@ router.get("/", (req, res) => {
 //  Gets the food items by category
 router.get("/categories", (req, res) => {
   let filter = req.query.filter;
-  console.log(filter);
   if (filter) {
     return menuItems
       .findItemsByCategories(filter)
       .then((foodItems) => {
-        console.log(foodItems);
         return res.status(200).json({ foodItems });
       })
       .catch((err) => {
@@ -34,13 +32,12 @@ router.get("/categories", (req, res) => {
     return menuItems
       .findCategories()
       .then((categories) => {
-        // console.log(categories);
         res.status(200).json({ categories });
       })
       .catch((err) => {
         console.log(err);
         res.status(400).json({
-          error: "error getting information",
+          error: "error getting information"
         });
       });
   }
